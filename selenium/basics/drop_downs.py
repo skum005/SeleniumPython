@@ -11,11 +11,13 @@ dropdownElement = driver.find_element(By.ID, 'exampleFormControlSelect1')
 gender_dropdown = Select(dropdownElement)
 gender_dropdown.select_by_visible_text('Male')
 
+dropdownElement.get_property()
+
 # method 2 - by iterating through all elements of the dropdown values
 dropdown_elements = driver.find_elements(By.CSS_SELECTOR, 'select#exampleFormControlSelect1 option')
 dropdownElement.click()
 for element in dropdown_elements:
-    if(element.text == 'Female'):
+    if element.text == 'Female':
         element.click()
         break
 
